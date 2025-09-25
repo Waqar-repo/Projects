@@ -29,6 +29,30 @@ box-shadow: 0 0 10px 5px rgba(0, 0 , 0, 0.1);
 .sun-icon{
   vertical-align: middle;
   margin-left: 16px;
+ transform-origin: center;          
+ will-change: transform;            
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.sun-eye1{
+  position: absolute;
+    top: 147px;
+    left: 158px;
+}
+.sun-eye2{
+  position: absolute;
+    top: 147px;
+    left: 167px;
+
+}
+
+.sun-mouth{
+  position: absolute;
+    top: 154px;
+    left: 160px;
 }
 .progress-label{
 color: rgba(133, 133, 133, 1);
@@ -54,6 +78,12 @@ color: rgba(133, 133, 133, 1);
   align-items: center;
   padding-left: 20px;
   color:rgba(238, 255, 224, 1) ;
+  width: 0;
+  overflow: hidden;
+}
+.progress-value span{
+padding-left: 20px;
+
 }
 .error-label{
   font-size: 14px;
@@ -69,6 +99,7 @@ color: rgba(133, 133, 133, 1);
   align-items: center;
   padding: 0 22px;
   background-color: rgba(255, 255, 255, 1);
+  margin-bottom: 34px;
 
   
 }
@@ -78,13 +109,27 @@ color: rgba(133, 133, 133, 1);
   width: 20px;
  border: 2px solid rgba(97, 72, 28, 0.3);
  border-radius: 50%;
- 
+ /* margin: 0 22px; */
+ flex-shrink: 0;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
 }
 
+.check-icon{
+  display: none;
+}
 .goal-input{
   border: none;
   background-color:rgba(255, 255, 255, 1) ;
-  margin-left: 22px;
+  margin-left: 8px;
+  /* flex-grow: 1; */
+  /* height: 90%; */
+  align-self: stretch;
+  width: 100%;
+  font-weight: 500;
 }
 
 .goal-input::placeholder{
@@ -93,12 +138,77 @@ color: rgba(133, 133, 133, 1);
   color: rgba(217, 217, 217, 1);
 }
 
+.quote{
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+text-align: center;
+margin-bottom: 48px;
+}
+
+.madeby{
+font-weight: 500;
+font-size: 10px;
+text-align: center;
+color: rgba(133, 133, 133, 1);
+}
+
+.completed .custom-checkbox{
+background-color: rgba(72, 163, 0, 1);
+border-color: rgba(72, 163, 0, 1);
+
+}
+.completed .check-icon{
+  display: block;
+  
+
+}
+.error-label{
+  opacity: 0;
+}
+.error-label1{
+  opacity: 1;
+}
+
+.completed .goal-input{
+  color: rgba(72, 163, 0, 1);
+  text-decoration: line-through;
+}
+
+
+.one-done {
+width: 33%;
+}
+.two-done{
+width: 66%;
+} 
+.three-done{
+width: 100%;
+}
+
+
+
 @media(max-width: 700px){
   .title{
   font-size:2rem ;
 
 }
 .app-container{
-   padding: 16px 24px 16px 24px; 
+   padding: 16px 24px 6px 24px; 
+}
+
+.goal-container{
+  height: 64px;
+ margin-bottom: 16px;
+}
+.custom-checkbox{
+  height: 16px;
+  width: 16px;
+}
+.quote{
+  margin-bottom: 16px;
+}
+.progress-bar{
+  height: 24px;
 }
 }
