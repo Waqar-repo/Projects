@@ -189,8 +189,32 @@ width: 66%;
 width: 100%;
 }
 
+.button{
+  min-width: 88px;
+position: absolute;
+display: inline-block;
+align-items: center;
+justify-content: center;
+vertical-align: 10px;
+text-align: center;
 
 
+transform: translate(-23%, 452%);
+/* transform: translateX(-280%);
+transform: translatey(-20%); */
+background-color: rgba(72, 163, 0, 0.07);
+border: 1px solid  rgba(72, 163, 0, 0.07);
+color:  rgba(133, 133, 133, );
+border-radius: 15px;
+font-size: 12px;
+cursor: pointer;
+
+}
+.button:hover{
+  background-color: green;
+border: 1px solid  rgba(72, 163, 0, 0.07); 
+color: white;
+}
 @media(max-width: 700px){
   .title{
   font-size:2rem ;

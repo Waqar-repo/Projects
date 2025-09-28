@@ -7,6 +7,9 @@ const Allgoals = JSON.parse(localStorage.getItem('Allgoals')) || {};
 const progressLabel = document.querySelector('.progress-label');
 const bottonQuote = document.querySelector('.quote');
 
+const button = document.querySelector('.buton')
+const duplicate = document.querySelector('.duplicate')
+
 const allQuotes = [
   'Rise the bar by completing your goal!',
   'well begun is half done',
@@ -19,8 +22,8 @@ const allQuotes = [
 let completedGoalCount = Object.values(Allgoals).filter(
   (goal) => goal.completed
 ).length;
-progressValue.style.width = `${(completedGoalCount / 3) * 100}%`;
-progressValue.firstElementChild.innerText = `${completedGoalCount}/3 completed`;
+progressValue.style.width = `${(completedGoalCount / goalInput.length) * 100}%`;
+progressValue.firstElementChild.innerText = `${completedGoalCount}/${ goalInput.length} completed`;
 progressLabel.innerText = allQuotes[completedGoalCount];
 
 CheckBoxList.forEach((checkbox) => {
@@ -36,8 +39,8 @@ CheckBoxList.forEach((checkbox) => {
       Allgoals[inputId].completed = !Allgoals[inputId].completed;
       completedGoalCount = Object.values(Allgoals).filter(
         (goal) => goal.completed).length;
-      progressValue.style.width = `${(completedGoalCount / 3) * 100}%`;
-      progressValue.firstElementChild.innerText = `${completedGoalCount}/3 completed`;
+      progressValue.style.width = `${(completedGoalCount / goalInput.length) * 100}%`;
+     progressValue.firstElementChild.innerText = `${completedGoalCount}/${ goalInput.length} completed`;
       localStorage.setItem('Allgoals', JSON.stringify(Allgoals));
       progressLabel.innerText = allQuotes[completedGoalCount];
  
@@ -75,3 +78,10 @@ goalInput.forEach((input) => {
     localStorage.setItem('Allgoals', JSON.stringify(Allgoals));
   });
 });
+// button.addEventListener('click',(e)=>{
+//   const newDiv = duplicate.cloneNode(true)
+
+// duplicate.appendChild(newDiv)
+  
+
+// })
