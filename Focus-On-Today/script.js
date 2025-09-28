@@ -12,9 +12,9 @@ const allQuotes = [
   'well begun is half done',
   'Just a step away,keep going!',
   'Whao! you just completed all the goals. time for chill :D',
-  '“Keep Going, You are making great progress!”',
-  '“Move one step ahead, today!”',
-  'Well done',
+  // '“Keep Going, You are making great progress!”',
+  // '“Move one step ahead, today!”',
+  // 'Well done',
 ];
 let completedGoalCount = Object.values(Allgoals).filter(
   (goal) => goal.completed
@@ -35,19 +35,12 @@ CheckBoxList.forEach((checkbox) => {
       const inputId = checkbox.nextElementSibling.id;
       Allgoals[inputId].completed = !Allgoals[inputId].completed;
       completedGoalCount = Object.values(Allgoals).filter(
-        (goal) => goal.completed
-      ).length;
+        (goal) => goal.completed).length;
       progressValue.style.width = `${(completedGoalCount / 3) * 100}%`;
       progressValue.firstElementChild.innerText = `${completedGoalCount}/3 completed`;
       localStorage.setItem('Allgoals', JSON.stringify(Allgoals));
       progressLabel.innerText = allQuotes[completedGoalCount];
-      if (completedGoalCount >= 1 && completedGoalCount <= 2) {
-        bottonQuote.innerText = allQuotes[4];
-      } else if (completedGoalCount === 3) {
-        bottonQuote.innerText = allQuotes[6];
-      } else {
-        bottonQuote.innerText = allQuotes[5]; // fallback / default
-      }
+ 
     } else {
       errorCheck.classList.add('error-label1');
     }
@@ -55,11 +48,16 @@ CheckBoxList.forEach((checkbox) => {
 });
 
 goalInput.forEach((input) => {
-  input.value = Allgoals[input.id].name;
-  if (Allgoals[input.id].completed) {
-    input.parentElement.classList.add('completed');
-    bottonQuote.innerText = allQuotes[4];
+  if (Allgoals[input.id]) {
+    input.value = Allgoals[input.id].name;
+    if (Allgoals[input.id].completed) {
+      input.parentElement.classList.add('completed');
+    }
+  } else {
+    // Initialize empty goal if not in localStorage
+    Allgoals[input.id] = { name: "", completed: false };
   }
+
   input.addEventListener('focus', () => {
     errorCheck.classList.remove('error-label1');
   });
