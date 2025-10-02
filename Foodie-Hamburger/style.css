@@ -1,15 +1,13 @@
 *{
     box-sizing: border-box;
 }
-html{
-    /* // making scroll smooth */
-    scroll-behavior: smooth; 
-}
+
 body{
     background-color: #F6F0EB;
     font-family:"Poppins", sans-serif ;
     margin: 0;
     padding-inline: 30px;
+
 }
 nav a{
     text-decoration-line: none;
@@ -22,6 +20,7 @@ nav a{
 }
 nav{
     display: flex;
+    
 
 }
 nav a + a{
@@ -30,6 +29,7 @@ nav a + a{
 header{
     background-color: white;
      padding: 24px;
+  
      
 
 }
@@ -160,7 +160,11 @@ top: -27px;
 left: 31px;
 cursor: pointer;
 }
-
+.over-flow{
+    overflow-x: hidden;
+    height: 100vh;
+    scroll-behavior: smooth; 
+}
 
  @media(max-width: 1200px){
 nav a {
@@ -221,10 +225,10 @@ nav {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.75);
     flex-direction: column;
-    right: 24px;
+    right: -218px;
     top: 24px;
      padding: 24px;
-     display: none;
+     transition: all 0.25s ease-in;
      
     
 
@@ -246,6 +250,7 @@ display:block;
 
  .menu-open nav{
 display: flex;
+right: 24px;
 }
 
 .menu-open .hamburger-menu-container{
@@ -266,6 +271,7 @@ header img{
 .hamburger-menu{
       position: relative;
     top: -47px;
+    left: 30px;
 
 }
   }
