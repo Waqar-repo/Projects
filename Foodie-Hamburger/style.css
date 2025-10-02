@@ -30,6 +30,7 @@ nav a + a{
 header{
     background-color: white;
      padding: 24px;
+     
 
 }
 .header-content{
@@ -38,6 +39,8 @@ header{
       display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 100px;
+   
    
 
 }
@@ -123,7 +126,7 @@ img{
     right: 13px;
     top: 18px;
     color: #492118;
-    /* display: none; */
+    display: none;
   
 }
 .hamburger-icon{
@@ -131,6 +134,7 @@ img{
        position: absolute;
     top: 55px;
     left: 29px;
+
 
 }
  .hamburger-menu-container{
@@ -156,6 +160,7 @@ top: -27px;
 left: 31px;
 cursor: pointer;
 }
+
 
  @media(max-width: 1200px){
 nav a {
@@ -210,6 +215,7 @@ footer p {
         ;
         position: sticky;
         top: 0;
+        max-height: 70px;
     }
 nav {
     position: absolute;
@@ -218,11 +224,13 @@ nav {
     right: 24px;
     top: 24px;
      padding: 24px;
-     /* display: none; */
+     display: none;
      
     
 
 }
+
+
 nav a + a{
     margin: 0;
     margin-top: 5px;
@@ -234,4 +242,30 @@ nav a + a{
 display:block;
  }
 
- }
+ 
+
+ .menu-open nav{
+display: flex;
+}
+
+.menu-open .hamburger-menu-container{
+    display: none;
+}
+.menu-open .close-icon{
+    display: block;
+}
+
+header{
+min-height: 81px;
+
+}
+header img{
+    position: relative;
+    top: -25px;
+}
+.hamburger-menu{
+      position: relative;
+    top: -47px;
+
+}
+  }
