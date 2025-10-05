@@ -1,0 +1,179 @@
+body{
+    background-color: rgba(222, 205, 172, 1);
+    margin: 0;
+    font-family: "Inika", serif;
+}
+.popup{
+background-color: rgba(254, 250, 243, 1);
+width: 690px;
+height: 346px;
+
+opacity: 1;
+border-radius: 41px;
+position: fixed;
+
+box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
+padding: 8px;
+
+/* going to button when we close */
+/* transform: translate(-76%,19%) scale(0); */
+transform: translate(72%,19%) scale(0);
+transition: all 0.2s ease-in-out;
+top: 0;
+left: 0;
+padding-bottom: 32px;
+}
+
+/* opening to center when we open*/
+.popup-open .popup{
+transform: scale(1);
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%,-50%) scale(1);
+
+}
+
+.close-icon{
+font-size: 32px;
+/* font-weight: 700; */
+
+opacity: 1;
+color: rgba(175, 161, 135, 1);
+cursor: pointer;
+position: absolute;
+right: 16px;
+font-family: sans-serif;
+
+
+}
+
+.h2{
+font-weight: 400;
+font-style: Regular;
+font-size: 40px;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+.p-tag{
+
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+.overlay{
+    display: none;
+    position: fixed;
+   inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.popup-open .overlay{
+    display: block;
+}
+
+.button-container{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    width: 485px;
+height: 243px;
+border-radius: 28.82px;
+opacity: 1;
+background-color:rgba(254, 250, 243, 1) ;
+
+}
+.button-container button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:rgba(235, 191, 83, 1) ;
+    width: 285px;
+height: 63px;
+border: 1px solid white;
+border-radius: 31.71px;
+
+opacity: 1;
+color: white;
+font-size: 28px;
+cursor: pointer;
+
+}
+
+img{
+    position: absolute;
+    max-width: 213px;
+    max-height: 218px;
+    top: -36px;
+    left: 50px;
+}
+/* .container{
+display: flex;
+} */
+.h2{
+    position: relative;
+    text-align: right;
+    right: 57px;
+    top: 34px;
+}
+
+.p-tag{
+     position: relative;
+   text-align: right;
+   right: -353px;
+    top: 24px;
+    max-width: 289px;
+}
+.p-tag span {
+    position: absolute;
+    top: 24px;
+    left: 12px;
+}
+
+.subs-container{
+    
+    display: flex;
+        width: 690px;
+    height: 346px;
+  
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    background-color:rgba(238, 232, 221, 1);
+    width: 434px;
+height: 56px;
+border-radius: 28px;
+border-width: 1px;
+
+opacity: 1;
+padding-left: 20px;
+
+}
+
+.sub-button{
+    width: 179px;
+height: 56px;
+border-width: 1px;
+
+opacity: 1;
+border-radius: 28px;
+    background: rgba(235, 191, 83, 1);
+border: 1px solid rgba(235, 191, 83, 1);
+cursor: pointer;
+margin-left: 2px;
+
+}
+::placeholder {
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+.popup-open .button-container{
+    opacity: 0;
+}
