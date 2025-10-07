@@ -21,7 +21,7 @@ line-height: 100%;
 
 text-align: center;
 margin-top: 100px;
-
+opacity: 0;
 }
 
 .index-p{
@@ -35,8 +35,12 @@ text-align: center;
 vertical-align: middle;
 color: rgba(133, 133, 133, 1);
 
-}
 
+}
+/* add this calss to show return user last time score */
+.return-user .high-score{
+opacity: 1;
+}
 @media(max-width:865px){
         .quiz-time-start-container{
 
@@ -61,7 +65,7 @@ color: rgba(133, 133, 133, 1);
 @media(max-width:740px){
     .quiz-time-start-container{
 
-    transform: translate(-3%,50%);
+    transform: translate(0%,50%);
 }
 .quiz-time-start img{
     max-width: 560px;
@@ -81,7 +85,7 @@ color: rgba(133, 133, 133, 1);
 @media(max-width:583px){
     .quiz-time-start-container{
 
-    transform: translate(-3%,50%);
+    transform: translate(0%,50%);
 }
 .quiz-time-start img{
     max-width: 500px;
@@ -112,4 +116,76 @@ color: rgba(133, 133, 133, 1);
 
     transform: translate(-3%,50%);
 }
+}
+
+/* working on quiz.html */
+
+.container{
+    max-width:100vw ;
+   height: 100vh;
+    
+background-color:rgba(204, 226, 194, 1) ;
+}
+.quiz-container{
+    /* background-color: red; */
+ max-width:1000px ;
+   height: 800px;
+   display: flex;
+   flex-wrap: wrap;
+   position: relative;
+/* justify-content: center; */
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+
+   
+}
+.quiz-icon img{
+    max-width: 222px;
+    max-height: 92.28px;
+     
+    
+}
+
+.sound-icon{
+    position: relative;
+ 
+    margin-left: auto;
+    top: 18px;
+
+ 
+}
+.quiz-number{
+position: relative;
+width: 113.3px;
+height: 53px;
+background-color:rgb(254, 195, 61);
+top: 81px;
+right: 111px;
+
+
+
+}
+.quiz-number {
+    font-weight: 600;
+  font-size: 35.25px;
+  text-align: center;
+}
+.question-contaier{
+ width: 900px;
+height: 147px;
+border-radius: 13px;
+background-color: rgba(245, 245, 245, 0.48);
+display: flex;
+transform: translate(0%, -152%);
+align-items: center;
+justify-content: center;
+
+
+}
+.question{
+font-weight: 600;
+font-size: 24px;
+
 }
