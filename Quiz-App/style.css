@@ -258,10 +258,12 @@ display: none;
 
 }
 /* important for check mark or cross mark border */
-.correct .option{
+
+
+.correct{
     border:3px solid rgba(53, 189, 58, 1) ;
 }
-.wrong .option{
+.wrong{
     border:3px solid rgba(255, 122, 122, 1) ;
 }
 .next-p{
