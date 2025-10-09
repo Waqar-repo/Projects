@@ -3,7 +3,7 @@ const questionContaier = document.querySelector('.question-contaier');
 const questions = document.querySelector('.question');
 
 const optionsText = document.querySelectorAll('.option-text');
-const options = document.querySelector('.option');
+const options = document.querySelectorAll('.option');
 
 const nextBtn = document.querySelector('.next-p')
 const quizNumber = document.querySelector('.quiz-number')
@@ -11,6 +11,8 @@ const quizNumber = document.querySelector('.quiz-number')
 const timerEl = document.querySelector('.timer')
 
 const containerEl = document.querySelector('.container')
+const correctWrongImgEle = document.querySelectorAll('.correct-wrong-img')
+
 
 const quizQuestions = [
   {
@@ -167,7 +169,6 @@ let quizNumberIndex = 1
 let timeInterval
 // let timeleft = 30
 function showQuestion(index){
-    
   const currentQuestion = quizQuestions[currentIndex];
   questions.textContent = currentQuestion.question;
 
@@ -177,11 +178,54 @@ function showQuestion(index){
   });
   quizNumber.textContent = `${quizNumberIndex}  / ${quizQuestions.length}`
 
+  
+
+
+
 }
+//matching options to answer and give right and wrong
+
+options.forEach((option)=>{
+  option.addEventListener('click',(e) =>{
+const correctAnswer = quizQuestions[currentIndex].answer
+
+if(option.innerText === correctAnswer){
+
+option.classList.add('correct')
+option.childNodes[3].childNodes[2].src = 'images/correct.svg'
+option.childNodes[3].childNodes[2].style.display = 'block'
+
+} 
+else{
+option.childNodes[3].children[0].style.display = 'block'
+option.classList.add('wrong')
+option.childNodes[3].childNodes[2].src = 'images/wrong.svg'
+option.childNodes[3].childNodes[2].style.display = 'block'
+
+
+}
+
+  })
+
+
+
+
+
+})
+showQuestion(currentIndex)
 showQuestion()
 
 
 nextBtn.addEventListener('click',(e)=>{
+  //reset correct and wrong img
+  //reset correct and wrong class
+  //reset you chose when wrong answer
+options.forEach((opt )=> {
+  opt.classList.remove('correct', 'wrong')
+opt.childNodes[3].childNodes[2].src = ''
+opt.childNodes[3].childNodes[2].style.display = 'none'
+opt.childNodes[3].children[0].style.display = 'none'
+});
 containerEl.classList.remove('yellow')
 containerEl.classList.remove('red')
  if(timeInterval){
@@ -199,6 +243,7 @@ if(currentIndex < quizQuestions.length){
  else{
     
  clearInterval(timeInterval)
+ options.forEach(opt => opt.style.pointerEvents = 'none')
  timerEl.textContent = `00:00`
    questions.textContent = 'Quiz Finished'
    optionsText.forEach(span => span.textContent='')
@@ -235,3 +280,4 @@ containerEl.classList.add('red')
 },1000)
 }
 startTime(30)
+
