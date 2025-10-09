@@ -228,6 +228,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-top: 34px;
+
+cursor: pointer;
 }
 .side-label-container{
     margin-left: auto;
