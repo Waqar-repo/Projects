@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(246, 244, 240, 1);
+}
+.result-container{
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 60px;
+}
+.logo{
+   width: 222px;
+height: 92.28248596191406px;
+
+ 
+}
+h2{
+font-weight: 600;
+
+font-size: 32px;
+
+
+}
+.retake{
+    background-color: rgba(53, 189, 58, 1);
+    width: 100px;
+    height: 30px;
+
+text-align: center;
+border-radius: 4.34px;
+margin-bottom: 50px;
+margin-top: 50px;
+
+}
+a{
+    text-decoration: none;
+    
+}
