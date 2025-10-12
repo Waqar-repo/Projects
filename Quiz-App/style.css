@@ -283,3 +283,88 @@ cursor: pointer;
 .red{
     background-color:rgba(219, 173, 173, 1) ;
 }
+
+/* audio */
+.audio{
+    display: none;
+}
+
+/* media query to set layout for smaller screen quiz app */
+
+@media(max-width:1894px){
+.quiz-container{
+    margin-top: -180px;
+}
+}
+
+@media(max-width:1010px){
+.option{
+width: 100%;
+    }
+.option-container{
+ width: 830px;
+height: 475px;
+position: relative;
+left: 80px;
+    }
+    .timer-container{
+        margin-right: 90px;
+        /* position: relative;
+        right: 90px; */
+    }
+    .quiz-number-container{
+        margin-right: 90px;
+    }
+    .question-contaier{
+         width: 830px;
+    }
+    .sound-icon{
+         /* position: relative;
+        right: 90px; */
+        
+    }
+    .quiz-header img{
+         /* position: relative;
+        left: 90px; */
+        margin-left: 90px;
+    }
+}
+
+@media(max-width:928px){
+    .option-container{
+ width: 780px;
+height: 475px;
+left: 66px;
+    }
+     .question-contaier{
+         width: 742px;
+    }
+    
+}
+
+@media(max-width:868px){
+    .option-container{
+ width: 714px;
+height: 475px;
+left: 66px;
+    }
+     .question-contaier{
+         width: 661px;
+    }
+    
+}
+
+@media(max-width:809px){
+    .option-container{
+ width: 642px;
+height: 475px;
+left: 66px;
+    }
+     .question-contaier{
+         width: 631px;
+    }
+    .question{
+        font-size: 16px;
+        
+    }
+}
