@@ -12,7 +12,8 @@ const timerEl = document.querySelector('.timer')
 
 const containerEl = document.querySelector('.container')
 const correctWrongImgEle = document.querySelectorAll('.correct-wrong-img')
-
+const correctAudioEl = document.querySelector('.correct-audio')
+const wrongAudioEl = document.querySelector('.wrong-audio')
 
 const quizQuestions = [
   {
@@ -167,7 +168,9 @@ const quizQuestions = [
 let currentIndex = 0
 let quizNumberIndex = 1
 let timeInterval
-// let timeleft = 30
+let correctAnswers = 0
+let wrongAnswers = 0
+
 function showQuestion(index){
   const currentQuestion = quizQuestions[currentIndex];
   questions.textContent = currentQuestion.question;
@@ -194,14 +197,17 @@ if(option.innerText === correctAnswer){
 option.classList.add('correct')
 option.childNodes[3].childNodes[2].src = 'images/correct.svg'
 option.childNodes[3].childNodes[2].style.display = 'block'
-
+correctAudioEl.play()
+correctAnswers++
 } 
 else{
+
 option.childNodes[3].children[0].style.display = 'block'
 option.classList.add('wrong')
 option.childNodes[3].childNodes[2].src = 'images/wrong.svg'
 option.childNodes[3].childNodes[2].style.display = 'block'
-
+wrongAudioEl.play()
+wrongAnswers++
 
 }
 
@@ -248,7 +254,7 @@ if(currentIndex < quizQuestions.length){
    questions.textContent = 'Quiz Finished'
    optionsText.forEach(span => span.textContent='')
    nextBtn.disabled = true
-//    quizNumber.textContent = `19  / 19`
+window.location.href = './results.html' // redirect to results
  }
 })
  //now setting timer
