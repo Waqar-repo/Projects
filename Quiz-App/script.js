@@ -1,4 +1,11 @@
-const questionContaier = document.querySelector('.question-contaier');
+const isQuizPage = window.location.pathname.includes("quiz.html");
+const isResultsPage = window.location.pathname.includes("results.html");
+
+
+
+if(isQuizPage){
+  localStorage.setItem('correctAnswers', 0);
+  const questionContaier = document.querySelector('.question-contaier');
 
 const questions = document.querySelector('.question');
 
@@ -164,12 +171,13 @@ const quizQuestions = [
   },
 ];
 
+
+ let correctAnswers = parseInt(localStorage.getItem("correctAnswers")) || 0;
+  let total = parseInt(localStorage.getItem("totalQuestions")) || 20;
 // first question and option when reload
 let currentIndex = 0
 let quizNumberIndex = 1
 let timeInterval
-let correctAnswers = 0
-let wrongAnswers = 0
 
 function showQuestion(index){
   const currentQuestion = quizQuestions[currentIndex];
@@ -182,8 +190,6 @@ function showQuestion(index){
   quizNumber.textContent = `${quizNumberIndex}  / ${quizQuestions.length}`
 
   
-
-
 
 }
 //matching options to answer and give right and wrong
@@ -207,7 +213,6 @@ option.classList.add('wrong')
 option.childNodes[3].childNodes[2].src = 'images/wrong.svg'
 option.childNodes[3].childNodes[2].style.display = 'block'
 wrongAudioEl.play()
-wrongAnswers++
 
 }
 
@@ -248,15 +253,21 @@ if(currentIndex < quizQuestions.length){
 }
  else{
     
- clearInterval(timeInterval)
- options.forEach(opt => opt.style.pointerEvents = 'none')
- timerEl.textContent = `00:00`
-   questions.textContent = 'Quiz Finished'
-   optionsText.forEach(span => span.textContent='')
-   nextBtn.disabled = true
-window.location.href = './results.html' // redirect to results
+clearInterval(timeInterval);
+  options.forEach(opt => opt.style.pointerEvents = 'none');
+  timerEl.textContent = `00:00`;
+  questions.textContent = 'Quiz Finished';
+  optionsText.forEach(span => span.textContent = '');
+  nextBtn.disabled = true;
+
+  //  Save results before redirect
+  localStorage.setItem('correctAnswers', correctAnswers);
+  localStorage.setItem('totalQuestions', quizQuestions.length);
+
+  window.location.href = './results.html'; // redirect
  }
 })
+
  //now setting timer
 function startTime(duration){
     if(timeInterval){
@@ -286,4 +297,23 @@ containerEl.classList.add('red')
 },1000)
 }
 startTime(30)
+}
 
+if (isResultsPage) {
+  window.addEventListener("DOMContentLoaded", () => {
+    const correctAnswers = parseInt(localStorage.getItem("correctAnswers")) || 0;
+    const total = parseInt(localStorage.getItem("totalQuestions")) || 20;
+
+    const wrong = total - correctAnswers;
+    const percentCorrect = (correctAnswers / total) * 100;
+    const percentWrong = (wrong / total) * 100;
+
+    const rightBar = document.getElementById("rightBar");
+    const wrongBar = document.getElementById("wrongBar");
+    const scoreText = document.querySelector(".right-wrong");
+
+    if (rightBar) rightBar.style.width = percentCorrect + "%";
+    if (wrongBar) wrongBar.style.width = percentWrong + "%";
+    if (scoreText) scoreText.textContent = `Correct: ${correctAnswers}/${total} (${percentCorrect.toFixed(1)}%)`;
+  });
+}
