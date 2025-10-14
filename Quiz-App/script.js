@@ -1,5 +1,5 @@
-const isQuizPage = window.location.pathname.includes("quiz.html");
-const isResultsPage = window.location.pathname.includes("results.html");
+const isQuizPage = window.location.pathname.includes("quiz");
+const isResultsPage = window.location.pathname.includes("results");
 
 
 
