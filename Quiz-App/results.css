@@ -4,6 +4,8 @@
 }
 body{
     background-color: rgba(246, 244, 240, 1);
+    font-family: "Poppins", sans-serif
+
 }
 .result-container{
     display: flex;
@@ -11,10 +13,13 @@ body{
 justify-content: center;
 align-items: center;
 margin-top: 60px;
+/* margin-left: 52px; */
+
 }
 .logo{
    width: 222px;
-height: 92.28248596191406px;
+height: 92px;
+margin-left: 190px;
 
  
 }
@@ -22,21 +27,80 @@ h2{
 font-weight: 600;
 
 font-size: 32px;
+margin-left: 250px;
 
 
 }
 .retake{
     background-color: rgba(53, 189, 58, 1);
-    width: 100px;
-    height: 30px;
+    width: 118px;
+    height: 34px;
 
 text-align: center;
 border-radius: 4.34px;
 margin-bottom: 50px;
 margin-top: 50px;
+padding-top: 4px;
+margin-left: 242px;
 
 }
-a{
+.retake-quiz{
     text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+
+font-weight: 600;
+font-size: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+
     
 }
+
+ul{
+   
+font-weight: 600;
+
+font-size: 22px;
+margin-left: 18px;
+margin-top: 100px;
+
+
+}
+.copyright{
+    margin-left: -16px;
+}
+.chart-container{
+    /* width: 600px;
+    height: 100%;
+    background-color: khaki;
+    margin-left: -77px;
+    margin-top: 100px;
+    display: flex; */
+        width: 600px;
+      height: 40px;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+      display: flex;
+   
+}
+.right-chart{
+    /* width: 6; */
+    height: 100%;
+    background-color: green;
+     border-top-left-radius: 10px;
+     border-bottom-left-radius: 10px;
+   /* border-radius: 10px; */
+}
+.wrong-chart{
+/* width: 300px; */
+height: 100%;
+background-color: red;
+  border-top-right-radius: 10px;
+     border-bottom-right-radius: 10px;
+}
+.right-wrong{
+    margin-left: 186px;
+}
+
