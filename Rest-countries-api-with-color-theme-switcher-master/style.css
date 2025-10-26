@@ -5,6 +5,7 @@
 body{
     margin: 0;
     font-family: Nunito,sans-serif;
+    background-color: rgba(245, 245, 220, 0.377);
 }
 a{
     text-decoration-line: none;
@@ -13,7 +14,7 @@ a{
 .title{
     font-weight:800;
 }
-.header-content{
+.header-content,.header-content-coundry{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,7 +23,7 @@ a{
 
     
 }
-.header-container{
+.header-container, .header-container-country{
     box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.1);
         padding-inline:20px ;
 }
@@ -64,4 +65,101 @@ main{
 box-shadow: 0px 1px 3px 4px rgba(0, 0, 0, 0.3);
 transform: scale(1.01);
 
+}
+
+/* country page */
+.back-button{
+    background-color: white;
+    border-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 4px rgba(0, 0, 0, 0.3);
+    padding: 2px 5px;
+    padding-right: 12px;
+     position: sticky;
+    top: 168px;
+    left: 51px;
+}
+.back-button span{
+    font-size: 20px;
+   
+}
+.country-img img{
+    max-width: 360px;
+}
+.country-container-country{
+    display: flex;
+    justify-content: space-between;
+    margin-inline:48px ;
+    margin-block:142px ;
+    flex-wrap: wrap;
+}
+.country-container-country p{
+font-size: 12px;
+}
+.country-data-one{
+    margin-top: 72px;
+    margin-right: 300px;
+}
+
+.border{
+    position: absolute;
+    top: 500px;
+    right: 316px;
+}
+.border span{
+    display: inline-block;
+    width: 62px;
+    height: 24px;
+     background-color: white;
+    border-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+.border h4{
+    font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+.border{
+    position: absolute;
+    top: 500px;
+    right: 224px;
+}
+}
+@media (max-width: 1032px) {
+.border{
+    position: absolute;
+    top: 500px;
+    right: 180px;
+}
+}
+
+@media (max-width: 600px) {
+.border{
+    position: absolute;
+   top: 720px;
+        right: 208px;
+}
+}
+
+@media (max-width: 576px) {
+.border{
+    position: sticky;
+   top: 720px;
+        right: 208px;
+}
+.country-data-one{
+    margin-top: -1px;
+}
+.border h4{
+    font-size: 10px;
+}
+.border span{
+   width: 42px;
+    height: 14px;
+    font-size: 8px;
+}
 }

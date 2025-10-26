@@ -12,6 +12,7 @@ const x = country.population
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+countryCard.href = `/country.html?name=${country.name.common}`
 const cardHTML = `
 
   <img src="${country.flags.svg}" alt="flag">
