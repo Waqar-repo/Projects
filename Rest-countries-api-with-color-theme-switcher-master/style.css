@@ -88,7 +88,8 @@ transform: scale(1.01);
 }
 .country-container-country{
     display: flex;
-    justify-content: space-between;
+ justify-content: flex-start; /* or center, if you want */
+  gap: 70px; /* Adjust this value to control spacing */
     margin-inline:48px ;
     margin-block:142px ;
     flex-wrap: wrap;
@@ -125,8 +126,8 @@ font-size: 12px;
 @media (max-width: 1100px) {
 .border{
     position: absolute;
-    top: 500px;
-    right: 224px;
+            top: 850px;
+        right: 840px;
 }
 }
 @media (max-width: 1032px) {
