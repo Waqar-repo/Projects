@@ -3,12 +3,12 @@ const countryContainerCountry = document.querySelector('body')
 const countryName = new URLSearchParams(window.location.search).get('name');
 
 
-console.log(countryName);
+// console.log(countryName);
 
 
 fetch (`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
 .then((res)=> res.json()).then((data)=>{
-    console.log(data[0])
+    // console.log(data[0])
 const x = data[0].population
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -19,6 +19,9 @@ countrydiv.classList.add('country-container-country')
 const country = data[0];
 const currencyName = Object.values(country.currencies || {})[0]?.name;
 const language = Object.values(country.languages)
+// console.log(Object.values(data[0].name.nativeName));
+
+
 const countryInfo = `
 <div class="country-img">
   <img src="${data[0].flags.svg}" alt="flag">
@@ -28,7 +31,7 @@ const countryInfo = `
   <h1>${data[0].name.common}</h1>
 
   <div class="country-details">
-    <p><strong>Native Name:</strong> ${data[0].name.common}</p>
+    <p><strong>Native Name:</strong> ${Object.values(data[0].name.nativeName)[0].common}</p>
     <p><strong>Population:</strong> ${numberWithCommas(x)}</p>
     <p><strong>Region:</strong> ${data[0].region}</p>
     <p><strong>Sub Region:</strong> ${data[0].subregion}</p>
