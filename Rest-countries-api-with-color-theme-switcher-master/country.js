@@ -20,32 +20,37 @@ const country = data[0];
 const currencyName = Object.values(country.currencies || {})[0]?.name;
 const language = Object.values(country.languages)
 const countryInfo = `
-
 <div class="country-img">
-    <img src="${data[0].flags.svg}" alt="flag">
+  <img src="${data[0].flags.svg}" alt="flag">
 </div>
+
 <div class="country-data">
-<h1>${data[0].name.common}</h1>
-<p>Native Name: ${data[0].name.common}</p>
-<p>Population: ${numberWithCommas(x)}</p>
-<p>Region: ${data[0].region}</p>
-<p>Sub Region: ${data[0].subregion}</p>
-<p>Capital: ${data[0].capital[0]} </p>
-</div>
-<div class="country-data-one">
-<p>Top Level Domain: ${data[0].tld[0]}</p>
-<p>Currencies: ${currencyName}</p>
-<p>Language: ${language}</p>
+  <h1>${data[0].name.common}</h1>
 
-</div>
-<div class="border">
-<h4>  Border Countries:
-  ${data[0].borders && data[0].borders.length > 0
-    ? data[0].borders.slice(0, 3).map(border => `<span>${border}</span>`).join(' ')
-    : '<span>None</span>'}</h4>
-</div>
+  <div class="country-details">
+    <p><strong>Native Name:</strong> ${data[0].name.common}</p>
+    <p><strong>Population:</strong> ${numberWithCommas(x)}</p>
+    <p><strong>Region:</strong> ${data[0].region}</p>
+    <p><strong>Sub Region:</strong> ${data[0].subregion}</p>
+    <p><strong>Capital:</strong> ${data[0].capital[0]}</p>
+    <p><strong>Top Level Domain:</strong> ${data[0].tld[0]}</p>
+    <p><strong>Currencies:</strong> ${currencyName}</p>
+    <p><strong>Languages:</strong> ${language}</p>
+  </div>
 
-`
+  <div class="border">
+    <h4>Border Countries:</h4>
+    <div class="border-list">
+      ${
+        data[0].borders && data[0].borders.length > 0
+          ? data[0].borders.slice(0, 3).map(border => `<span>${border}</span>`).join(' ')
+          : '<span>None</span>'
+      }
+    </div>
+  </div>
+</div>
+`;
+
 countrydiv.innerHTML = countryInfo
 countryContainerCountry.append(countrydiv)
 

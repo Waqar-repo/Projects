@@ -68,7 +68,7 @@ transform: scale(1.01);
 }
 
 /* country page */
-.back-button{
+/* .back-button{
     background-color: white;
     border-color: white;
     border-radius: 4px;
@@ -88,13 +88,13 @@ transform: scale(1.01);
 }
 .country-container-country{
     display: flex;
- justify-content: flex-start; /* or center, if you want */
-  gap: 70px; /* Adjust this value to control spacing */
+ justify-content: flex-start; 
+  gap: 70px;
     margin-inline:48px ;
     margin-block:142px ;
     flex-wrap: wrap;
-}
-.country-container-country p{
+} */
+/* .country-container-country p{
 font-size: 12px;
 }
 .country-data-one{
@@ -163,4 +163,4 @@ font-size: 12px;
     height: 14px;
     font-size: 8px;
 }
-}
+} */
