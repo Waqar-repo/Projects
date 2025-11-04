@@ -2,6 +2,7 @@
 const countriesContainer = document.querySelector('.countries-container')
 const filterByRegion = document.querySelector('.filter-by-region')
 const searchInput = document.querySelector('.search-container')
+const darkMode = document.querySelector('.fa-moon')
 let allCountriesData
 fetch ('https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,subregion,currencies,tld,languages,borders')
 .then((res)=> res.json())
@@ -144,4 +145,7 @@ searchInput.addEventListener('input', (e)=>{
 const filterCountries = allCountriesData.filter((country)=> country.name.common.toLowerCase().includes(e.target.value.toLowerCase()))
 console.log(filterCountries);
 renderCountries(filterCountries)
+})
+darkMode.addEventListener('click',()=>{
+  document.body.classList.toggle('dark')
 })

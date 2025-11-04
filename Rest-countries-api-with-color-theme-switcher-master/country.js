@@ -1,8 +1,7 @@
 const countryContainerCountry = document.querySelector('body')
 
 const countryName = new URLSearchParams(window.location.search).get('name');
-
-
+const darkMode = document.querySelector('.fa-moon')
 // console.log(countryName);
 
 
@@ -57,4 +56,7 @@ const countryInfo = `
 countrydiv.innerHTML = countryInfo
 countryContainerCountry.append(countrydiv)
 
+})
+darkMode.addEventListener('click',()=>{
+  document.body.classList.toggle('dark')
 })

@@ -162,3 +162,7 @@ country page
   }
 }
 
+.border-list span{
+background-color: inherit;
+   color: inherit;
+}
