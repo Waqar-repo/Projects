@@ -1,0 +1,65 @@
+
+body{
+    background-image:url(./resources/Gemini_Generated_Image_t5w7n3t5w7n3t5w7.png);
+    max-width: 100%;
+
+}
+.container{
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 200px;
+
+    /* remember to delete this code */
+    display: none;
+}
+.h1{
+  font-size: 52px;
+  font-weight: 500;
+}
+#postcode-input{
+ 
+    max-width: 50%;
+    padding:10px 50px 10px 50px;
+    border-radius: 6.66px; 
+    align-self: stretch;
+    outline: none;
+
+    border: none;
+  background-color:rgba(255, 255, 255, 1) ;
+  align-self: stretch;
+  width: 100%;
+  outline: none;
+margin-left: 2px;
+}
+
+input::placeholder{
+  color: #888;
+  opacity: 1; 
+  font-style: italic;
+  margin-left: -10px;
+  font-size: 16px;
+
+}
+#postcode-form{
+    display:flex;
+    flex-direction: row;
+justify-content: space-evenly;
+}
+button{
+    display: flex;
+    justify-content: end;
+    margin-right:20px ;
+    width: 240px;
+    background-color: green;
+    color: white;
+    outline: none;
+    border-radius: 6.66px; 
+}
+
+
+
+/* results */

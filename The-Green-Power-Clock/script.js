@@ -1,10 +1,14 @@
-// const submitEvent = document.getElementById('postcode-form')
-// const postCodeData = document.getElementById('postcode-input')
+const submitEvent = document.getElementById('postcode-form')
+const postCodeData = document.getElementById('postcode-input')
+const container = document.querySelector('.container')
 
-// submitEvent.addEventListener('submit',(e)=>{
-//     e.preventDefault()
-//     const postcode = postCodeData.value
-// console.log('hi', typeof postcode);
+let postcode
+submitEvent.addEventListener('submit',(e)=>{
+    e.preventDefault()
+     postcode = postCodeData.value
+console.log('hi', typeof postcode);
+container.style.display = 'none'
 
-// })
-// postCodeData.addEventListener
+})
+
+
