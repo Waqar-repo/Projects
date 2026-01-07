@@ -19,7 +19,8 @@ const emissionFactors = {
   other: 300,
   hydro: 0,
   solar: 0,
-  wind: 0
+  wind: 0,
+  gas: 490
 };
 
 submitEvent.addEventListener('submit',(e)=>{
@@ -50,7 +51,7 @@ durationUl.innerText = `on next ${diffInHours} hours`
 
  const gc2o = generationMixArray.reduce((acc,item)=>{
     const factor = emissionFactors[item.fuel] || 0
-    const contribution = (item.perc/100) * factor
+    const contribution = (item.perc / 100) * factor
     return acc + contribution
 
  },0)
