@@ -2,6 +2,7 @@
 body{
     background-image:url(./resources/Gemini_Generated_Image_t5w7n3t5w7n3t5w7.png);
     max-width: 100%;
+    
 
 }
 .container{
@@ -11,10 +12,8 @@ body{
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 240px;
 
-    /* remember to delete this code */
-    /* display: none; */
 }
 .h1{
   font-size: 52px;
@@ -79,6 +78,7 @@ button{
     margin-right: auto;
     background: linear-gradient(to right, green,yellow, red);
     border-radius: 20px;
+    margin-top: 200px;
     
 }
 .green, .yellow, .red {
