@@ -1,0 +1,48 @@
+.cardContainer{
+  max-width: 300px;
+  max-height: 250px;
+  text-align: center;
+  cursor: pointer;
+ box-shadow: 2px 2px 10px rgb(237, 231, 231);
+ border-radius: 12px;
+ padding: 10px;
+
+  
+}
+.cardContainer b{
+  color: rgb(9, 168, 168);
+  margin-top: -10px;
+}
+.cardContainer p {
+  margin-top: 2px;
+  font-size: 12px;
+}
+.cardContainer img{
+  max-width: 200px;
+  max-height: 200px;
+}
+.cardContainer:hover{
+  box-shadow: 2px 2px 10px rgb(208, 194, 194);
+}
+.container{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 50px;
+   margin:30px ;
+}
+.headerContent{
+  display: flex;
+  gap: 40px;
+  justify-content: left;
+  align-items: center;
+}
+.searchContent{
+  margin-left: -20px;
+  }
+  .aboutUs{
+    justify-content: flex-end;
+    cursor: pointer;
+  margin-left:  auto;
+  text-decoration: underline;
+  
+  }
